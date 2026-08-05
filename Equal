@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class Number
+{
+private:
+    int value;
+
+public:
+    void getData()
+    {
+        cin >> value;
+    }
+
+    bool operator==(const Number& n) const
+    {
+        return value == n.value;
+    }
+};
+
+int main()
+{
+    Number n1, n2;
+
+    n1.getData();
+    n2.getData();
+
+    if (n1 == n2)
+        cout << "Objects are Equal";
+    else
+        cout << "Objects are Not Equal";
+
+    return 0;
+}
