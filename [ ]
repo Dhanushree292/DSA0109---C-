@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+class Matrix {
+    int r, c;
+    int a[10][10];
+
+public:
+    Matrix(int rows = 0, int cols = 0) : r(rows), c(cols) {}
+
+    void getData() {
+        cout << "Enter elements (" << r << "x" << c << "):\n";
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                cin >> a[i][j];
+            }
+        }
+    }
+
+    void display() const {
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                cout << a[i][j] << " ";
+            }
+            cout << "\n";
+        }
+    }
+
+    Matrix operator*(const Matrix& other) const {
+        if (c != other.r) {
+            cout << "Matrix multiplication not possible!\n";
+            return Matrix();
+        }
+
+        Matrix result(r, other.c);
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < other.c; j++) {
+                int sum = 0;
+                for (int k = 0; k < c; k++) {
+                    sum += a[i][k] * other.a[k][j];
+                }
+                result.a[i][j] = sum;
+            }
+        }
+        return result;
+    }
+};
+
+int main() {
+    int r1, c1, r2, c2;
+
+    cout << "Enter rows and cols of Matrix A: ";
+    cin >> r1 >> c1;
+
+    cout << "Enter rows and cols of Matrix B: ";
+    cin >> r2 >> c2;
+
+    Matrix A(r1, c1), B(r2, c2);
+
+    A.getData();
+    B.getData();
+
+    Matrix C = A * B;
+
+    cout << "Result (A * B):\n";
+    C.display();
+
+    return 0;
+}
