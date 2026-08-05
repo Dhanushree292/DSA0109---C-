@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Number
+{
+private:
+    int x;
+
+public:
+    void getData()
+    {
+        cin >> x;
+    }
+
+    void operator++()
+    {
+        ++x;
+    }
+
+    void display()
+    {
+        cout << "Value = " << x;
+    }
+};
+
+int main()
+{
+    Number n;
+
+    n.getData();
+
+    ++n;
+
+    n.display();
+
+    return 0;
+}
