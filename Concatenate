@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+string concatenate(string s1, string s2) {
+    return s1 + s2;
+}
+
+char* concatenate(char c1[], char c2[]) {
+    static char result[200];
+    strcpy(result, c1);
+    strcat(result, c2);
+    return result;
+}
+
+int main() {
+    string str1, str2;
+    char arr1[100], arr2[100];
+
+    cout << "Enter first string: ";
+    getline(cin, str1);
+
+    cout << "Enter second string: ";
+    getline(cin, str2);
+
+    cout << "Enter first character array: ";
+    cin >> arr1;
+
+    cout << "Enter second character array: ";
+    cin >> arr2;
+
+    cout << "\nConcatenated string: " << concatenate(str1, str2) << endl;
+    cout << "Concatenated character array: " << concatenate(arr1, arr2) << endl;
+
+    return 0;
+}
