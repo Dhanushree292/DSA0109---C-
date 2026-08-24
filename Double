@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num = 25.75;
+    double *ptr = &num;
+
+    cout << "Value of num: " << num << endl;
+    cout << "Value using pointer: " << *ptr << endl;
+    cout << "Address of num (stored in pointer): " << ptr << endl;
+
+    return 0;
+}
