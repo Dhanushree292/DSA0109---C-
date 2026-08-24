@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch = 'H';
+    char *ptr = &ch;
+
+    cout << "Value of char: " << *ptr << endl;
+    cout << "Address of char: " << (void*)ptr << endl;
+
+    return 0;
+}
