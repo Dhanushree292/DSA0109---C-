@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float num = 25.75;
+    float *ptr = &num;
+    cout << "Value of float variable: " << num << endl;
+    cout << "Value using pointer: " << *ptr << endl;
+    cout << "Address of float variable: " << ptr << endl;
+    return 0;
+}
