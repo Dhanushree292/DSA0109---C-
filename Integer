@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 25;
+    int *ptr = &num;
+    cout << "Value of num: " << num << endl;
+    cout << "Value using pointer (*ptr): " << *ptr << endl;
+    cout << "Address of num (ptr): " << ptr << endl;
+    return 0;
+}
